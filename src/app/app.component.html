@@ -4,4 +4,47 @@
 <hr>
 <button mat-raised-button color="primary">Hello world</button>
 
+<hr>
+<i class="material-icons">person</i>
+
+<mat-icon>person</mat-icon>
+
+<div>
+    這是一般的ICON顏色
+    <mat-icon>person</mat-icon>
+  </div>
+  
+  <div>
+    这个是加上primary颜色的ICON
+    <mat-icon color="primary">thumb_up</mat-icon>
+  </div>
+  
+  <div>
+    这个是加上accent颜色的ICON
+    <mat-icon color="accent">info</mat-icon>
+  </div>
+  
+  <div>
+    这个是加上warn颜色的ICON
+    <mat-icon color="warn">warning</mat-icon>
+  </div>
+<hr>
+  <h2>自行注册SVG icon</h2>
+
+<div>
+    <mat-icon svgIcon="custom-svg:angular"></mat-icon>
+    <mat-icon svgIcon="custom-svg:angular" color="primary"></mat-icon>
+    <mat-icon svgIcon="custom-svg:angular" color="accent"></mat-icon>
+    <mat-icon svgIcon="custom-svg:angular" color="warn"></mat-icon>
+</div>
+
+<h2>在MatIcon中使用FontAwesome</h2>
+
+<div>
+  <!-- 就是<i class="fa fa-thumbs-up">的概念 -->
+  <mat-icon fontSet="fontawesome" fontIcon="fa-thumbs-up"></mat-icon>
+  <mat-icon fontSet="fontawesome" fontIcon="fa-thumbs-up" color="primary"></mat-icon>
+  <mat-icon fontSet="fontawesome" fontIcon="fa-thumbs-up" color="accent"></mat-icon>
+  <mat-icon fontSet="fontawesome" fontIcon="fa-thumbs-up" color="warn"></mat-icon>
+</div>
 <router-outlet></router-outlet>
