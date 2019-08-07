@@ -8,9 +8,13 @@
   <!-- 在這之後的都會被推到右邊去 -->
   <span class="toolbar-seprator"></span>
 
-  <button mat-icon-button>
+  <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
     <mat-icon>message</mat-icon>
   </button>
+  <mat-menu #messageMenu="matMenu">
+    <button mat-menu-item>最新訊息</button>
+    <button mat-menu-item>訊息設定</button>
+  </mat-menu>
   <button mat-icon-button>
     <mat-icon>exit_to_app</mat-icon>
   </button>
@@ -72,23 +76,23 @@
     </mat-nav-list>
     <mat-divider></mat-divider>
     <mat-nav-list>
-        <h3 matSubheader>
-          <mat-icon>chat_bubble</mat-icon>
-          新訊息
-        </h3>
-        <mat-list-item *ngIf="optNew.selected">這是新消息</mat-list-item>
-        <mat-list-item *ngIf="optAds.selected">這是廣告消息</mat-list-item>
-      
-        <mat-divider></mat-divider>
-        <h3 matSubheader>
-          <mat-icon>settings</mat-icon>
-          訊息設定
-        </h3>
-        <mat-selection-list>
-          <mat-list-option [value]="1" selected="true" #optNew>有新訊息時通知我</mat-list-option>
-          <mat-list-option [value]="2" #optAds>顯示廣告訊息</mat-list-option>
-        </mat-selection-list>
-      </mat-nav-list>
+      <h3 matSubheader>
+        <mat-icon>chat_bubble</mat-icon>
+        新訊息
+      </h3>
+      <mat-list-item *ngIf="optNew.selected">這是新消息</mat-list-item>
+      <mat-list-item *ngIf="optAds.selected">這是廣告消息</mat-list-item>
+
+      <mat-divider></mat-divider>
+      <h3 matSubheader>
+        <mat-icon>settings</mat-icon>
+        訊息設定
+      </h3>
+      <mat-selection-list>
+        <mat-list-option [value]="1" selected="true" #optNew>有新訊息時通知我</mat-list-option>
+        <mat-list-option [value]="2" #optAds>顯示廣告訊息</mat-list-option>
+      </mat-selection-list>
+    </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav #sideNavEnd opened="true" mode="side" position="end">
@@ -97,6 +101,56 @@
 
   <mat-sidenav-content>
     <button mat-raised-button (click)="toggleSideNav(sideNav)">切換選單狀態</button>
+
+    <button mat-raised-button (click)="menuTrigger.toggleMenu()">開啟訊息設定</button>
+
+    <div style="text-align:center">
+      <button mat-raised-button [matMenuTriggerFor]="positionMenu">開啟訊息設定，這是一條比較長的按鈕，好確認Menu的生長方向</button>
+      <mat-menu #positionMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+        <button mat-menu-item>訊息1</button>
+        <button mat-menu-item>訊息2</button>
+        <button mat-menu-item>訊息3</button>
+        <button mat-menu-item>訊息4</button>
+        <button mat-menu-item>訊息5</button>
+        <button mat-menu-item>訊息6</button>
+        <button mat-menu-item>訊息7</button>
+        <button mat-menu-item>訊息8</button>
+        <button mat-menu-item>訊息9</button>
+      </mat-menu>
+
+      <button mat-raised-button [matMenuTriggerFor]="positionMenu">巢狀選單demo</button>
+      <mat-menu #positionMenu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="subMenu1">訊息1</button>
+        <button mat-menu-item [matMenuTriggerFor]="subMenu2">訊息2</button>
+        <button mat-menu-item>訊息3</button>
+      </mat-menu>
+
+      <mat-menu #subMenu1="matMenu">
+        <button mat-menu-item>
+          <mat-icon>person</mat-icon>
+          訊息 1-1
+        </button>
+        <button mat-menu-item>
+          <mat-icon>favorite</mat-icon>
+          訊息 1-2
+        </button>
+        <button mat-menu-item>
+          <mat-icon>thumb_up</mat-icon>
+          訊息 1-3
+        </button>
+      </mat-menu>
+
+      <mat-menu #subMenu2="matMenu">
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          訊息 2-1
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>settings</mat-icon>
+          訊息 2-2
+        </button>
+      </mat-menu>
+    </div>
 
     <mat-drawer-container style="height:100px;margin:10px;border: 1px solid black">
       <mat-drawer mode="side" opened="true">Drawer Side</mat-drawer>

@@ -8,7 +8,8 @@ import {
   MatRippleModule,
   MatSidenavModule,
   MatToolbarModule,
-  MatListModule
+  MatListModule,
+  MatMenuModule
 } from '@angular/material';
 
 
@@ -18,9 +19,12 @@ import {
   imports: [
     CommonModule,
     MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
-    MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule
+    MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
+    MatMenuModule
   ],
   exports: [MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
-     MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule]
+     MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
+     MatMenuModule
+    ]
 })
 export class SharedMaterialModule { }
