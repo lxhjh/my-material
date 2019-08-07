@@ -9,7 +9,10 @@ import {
   MatSidenavModule,
   MatToolbarModule,
   MatListModule,
-  MatMenuModule
+  MatMenuModule,
+  MatStepperModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
 
 
@@ -20,11 +23,17 @@ import {
     CommonModule,
     MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
     MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
-     MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
-     MatMenuModule
-    ]
+    MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
+    MatMenuModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule
+  ]
 })
 export class SharedMaterialModule { }
