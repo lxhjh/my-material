@@ -7,7 +7,8 @@ import {
   MatButtonToggleModule,
   MatRippleModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatListModule
 } from '@angular/material';
 
 
@@ -16,8 +17,10 @@ import {
   declarations: [],
   imports: [
     CommonModule,
-    MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule, MatRippleModule, MatSidenavModule, MatToolbarModule
+    MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
+    MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule
   ],
-  exports: [MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule, MatRippleModule, MatSidenavModule, MatToolbarModule]
+  exports: [MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
+     MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule]
 })
 export class SharedMaterialModule { }
