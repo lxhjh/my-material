@@ -12,7 +12,8 @@ import {
   MatMenuModule,
   MatStepperModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatAutocompleteModule
 } from '@angular/material';
 
 
@@ -26,14 +27,16 @@ import {
     MatMenuModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatAutocompleteModule
   ],
   exports: [MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
     MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
     MatMenuModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatAutocompleteModule
   ]
 })
 export class SharedMaterialModule { }

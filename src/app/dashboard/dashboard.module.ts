@@ -11,12 +11,17 @@ import { SurveyComponent } from './survey/survey.component';
 
 
 @NgModule({
-  declarations: [MainComponent, DashboardComponent, SurveyComponent],
+  declarations: [
+    MainComponent,
+    DashboardComponent,
+    SurveyComponent
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedMaterialModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [DashboardComponent]
 })
