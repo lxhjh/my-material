@@ -19,7 +19,8 @@ import {
   MAT_DATE_LOCALE,
   MAT_DATE_FORMATS,
   DateAdapter,
-  MatSelectModule
+  MatSelectModule,
+  MAT_LABEL_GLOBAL_OPTIONS
 } from '@angular/material';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -73,7 +74,8 @@ export const MY_FORMATS = {
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
   //  { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
   { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
-    { provide: MAT_DATE_LOCALE, useValue: 'zh-CN' }
+    { provide: MAT_DATE_LOCALE, useValue: 'zh-CN' },
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}}
   ]
 })
 export class SharedMaterialModule { }
