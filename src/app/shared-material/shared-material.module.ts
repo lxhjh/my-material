@@ -24,7 +24,8 @@ import {
   MatCheckboxModule,
   MatRadioModule,
   MatSlideToggleModule,
-  MatSliderModule
+  MatSliderModule,
+  MatGridListModule
 } from '@angular/material';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -49,38 +50,50 @@ export const MY_FORMATS = {
   declarations: [],
   imports: [
     CommonModule,
-    MatMomentDateModule,
-    MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
-    MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatRippleModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
     MatMenuModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatMomentDateModule,
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
     MatSlideToggleModule,
-    MatSliderModule
+    MatSliderModule,
+    MatGridListModule
   ],
   exports: [
-    MatMomentDateModule,
-    MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
-    MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatRippleModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
     MatMenuModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatMomentDateModule,
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
     MatSlideToggleModule,
-    MatSliderModule
+    MatSliderModule,
+    MatGridListModule
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
