@@ -13,30 +13,64 @@ import {
   MatStepperModule,
   MatFormFieldModule,
   MatInputModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MAT_DATE_LOCALE,
+  MAT_DATE_FORMATS,
+  DateAdapter
 } from '@angular/material';
 
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule } from '@angular/material-moment-adapter';
+
+
+// See the Moment.js docs for the meaning of these formats:
+// https://momentjs.com/docs/#/displaying/format/
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'YYYY-MM-DD',  // 表示input中输入的格式，moment将按此格式解析内容
+  },
+  display: {
+    dateInput: 'YYYY-MM-DD',  // 显示格式，monent将日期按此格式呈现给用户
+    monthYearLabel: 'YYYY MMM',
+    dateA11yLabel: 'YYYY-MM-DD',
+    monthYearA11yLabel: 'YYYY MMM'
+  },
+};
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    MatMomentDateModule,
     MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
     MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
     MatMenuModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  exports: [MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
+  exports: [
+    MatMomentDateModule,
+    MatButtonModule, MatIconModule, MatButtonModule, MatButtonToggleModule,
     MatRippleModule, MatSidenavModule, MatToolbarModule, MatListModule,
     MatMenuModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
+  providers: [
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+  //  { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+  { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+    { provide: MAT_DATE_LOCALE, useValue: 'zh-CN' }
   ]
 })
 export class SharedMaterialModule { }

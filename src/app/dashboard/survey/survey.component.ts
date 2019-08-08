@@ -1,12 +1,14 @@
-import { FormGroup, FormControl, ValidatorFn, Validators, FormGroupDirective, NgForm  } from '@angular/forms';
+import { FormGroup, FormControl, ValidatorFn, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { MatStepperIntl, ErrorStateMatcher } from '@angular/material';
+import { MatStepperIntl, ErrorStateMatcher} from '@angular/material';
+import { MatDatepickerInputEvent} from '@angular/material';
 
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
+import * as moment from 'moment';
 
 
 export class TwStepperIntl extends MatStepperIntl {
@@ -26,10 +28,22 @@ export class EarlyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.scss'],
   providers: [{ provide: MatStepperIntl, useClass: TwStepperIntl },
-    { provide: ErrorStateMatcher, useClass: EarlyErrorStateMatcher }
+  { provide: ErrorStateMatcher, useClass: EarlyErrorStateMatcher }
   ]
 })
 export class SurveyComponent implements OnInit {
+
+  startDate = moment('2019-8-1');
+  minDate = moment('2019-8-8');
+  maxDate = moment('2019-8-28');
+
+  // startDate = moment(new Date(2019, 7, 1));
+  // minDate = moment(new Date(2019, 7, 8));
+  // maxDate = moment(new Date(2019, 7, 18));
+
+  // startDate = new Date(2019, 7, 1);
+  // minDate = new Date(2019, 7, 8);
+  // maxDate = new Date(2019, 7, 18);
 
   isLinear: boolean;
 
@@ -48,7 +62,8 @@ export class SurveyComponent implements OnInit {
         name: new FormControl('', Validators.required),
         intro: new FormControl('', [Validators.required, Validators.minLength(10)]),
         country: new FormControl(''),
-        majorTech: new FormControl('')
+        majorTech: new FormControl(''),
+        birthday: new FormControl({ value: '', disabled: true})
       })
     });
   }
@@ -89,5 +104,18 @@ export class SurveyComponent implements OnInit {
     } else {
       return '';
     }
+  }
+
+  familyDayFilter(date: moment.Moment): boolean {
+    const day = date.day();
+    return day !== 2 && day !== 5;
+  }
+
+  logDateInput($event: MatDatepickerInputEvent<moment.Moment>) {
+    console.log($event);
+  }
+
+  logDateChange($event: MatDatepickerInputEvent<moment.Moment>) {
+    console.log($event);
   }
 }
