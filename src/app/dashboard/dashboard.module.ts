@@ -9,6 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { SurveyComponent } from './survey/survey.component';
 import { BlogComponent } from './blog/blog.component';
+import { AddPostDialogComponent } from './blog/add-post-dialog/add-post-dialog.component';
+import { AddPostConfirmDialogComponent } from './blog/add-post-confirm-dialog/add-post-confirm-dialog.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { BlogComponent } from './blog/blog.component';
     MainComponent,
     DashboardComponent,
     SurveyComponent,
-    BlogComponent
+    BlogComponent,
+    AddPostDialogComponent,
+    AddPostConfirmDialogComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +29,7 @@ import { BlogComponent } from './blog/blog.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [DashboardComponent]
+  exports: [DashboardComponent],
+  entryComponents: [AddPostDialogComponent,AddPostConfirmDialogComponent]
 })
 export class DashboardModule { }
