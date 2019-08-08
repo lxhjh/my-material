@@ -9,3 +9,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-weight: bold;
     background: yellow;
   }
+.blue-dropdown .mat-select-content {
+    background: rgba(0, 0, 255, 0.5);
+  }

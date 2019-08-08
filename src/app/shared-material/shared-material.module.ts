@@ -18,7 +18,8 @@ import {
   MatNativeDateModule,
   MAT_DATE_LOCALE,
   MAT_DATE_FORMATS,
-  DateAdapter
+  DateAdapter,
+  MatSelectModule
 } from '@angular/material';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -52,7 +53,8 @@ export const MY_FORMATS = {
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
   exports: [
     MatMomentDateModule,
@@ -64,7 +66,8 @@ export const MY_FORMATS = {
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
