@@ -25,7 +25,8 @@ import {
   MatRadioModule,
   MatSlideToggleModule,
   MatSliderModule,
-  MatGridListModule
+  MatGridListModule,
+  MatCardModule
 } from '@angular/material';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -70,7 +71,8 @@ export const MY_FORMATS = {
     MatRadioModule,
     MatSlideToggleModule,
     MatSliderModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   exports: [
     MatButtonModule,
@@ -93,7 +95,8 @@ export const MY_FORMATS = {
     MatRadioModule,
     MatSlideToggleModule,
     MatSliderModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
