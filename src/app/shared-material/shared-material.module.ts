@@ -26,7 +26,9 @@ import {
   MatSlideToggleModule,
   MatSliderModule,
   MatGridListModule,
-  MatCardModule
+  MatCardModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -72,7 +74,9 @@ export const MY_FORMATS = {
     MatSlideToggleModule,
     MatSliderModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatButtonModule,
@@ -96,7 +100,9 @@ export const MY_FORMATS = {
     MatSlideToggleModule,
     MatSliderModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },

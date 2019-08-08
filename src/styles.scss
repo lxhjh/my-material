@@ -25,3 +25,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   mat-card:focus {
     background: lightblue;
   }
+  .blog-sidebard-content {
+    align-self: flex-start;
+    padding-top: 100px;
+    width: 95%;
+  }
