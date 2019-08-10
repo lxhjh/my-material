@@ -11,6 +11,7 @@ import { SurveyComponent } from './survey/survey.component';
 import { BlogComponent } from './blog/blog.component';
 import { AddPostDialogComponent } from './blog/add-post-dialog/add-post-dialog.component';
 import { AddPostConfirmDialogComponent } from './blog/add-post-confirm-dialog/add-post-confirm-dialog.component';
+import { AfterPostNotifyComponent } from './blog/after-post-notify/after-post-notify.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AddPostConfirmDialogComponent } from './blog/add-post-confirm-dialog/ad
     SurveyComponent,
     BlogComponent,
     AddPostDialogComponent,
-    AddPostConfirmDialogComponent
+    AddPostConfirmDialogComponent,
+    AfterPostNotifyComponent
   ],
   imports: [
     CommonModule,

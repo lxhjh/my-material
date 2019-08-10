@@ -29,7 +29,10 @@ import {
   MatCardModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
-  MatDialogModule
+  MatDialogModule,
+  MatChipsModule,
+  MatTooltipModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -78,7 +81,10 @@ export const MY_FORMATS = {
     MatCardModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
@@ -105,7 +111,10 @@ export const MY_FORMATS = {
     MatCardModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },

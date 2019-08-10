@@ -3,9 +3,38 @@
       </h2>
       
       <mat-dialog-content class="post-form">
+
         <mat-form-field>
-          <input matInput placeholder="標題" [(ngModel)]="title" />
+          <h4>文章標籤</h4>
+          <mat-chip-list>
+              <mat-chip color="primary" selected="true">JavaScript</mat-chip>
+              <mat-chip color="accent" selected="true">Material Design</mat-chip>
+              <mat-chip color="warn" selected="true">Angular Material</mat-chip>
+              <mat-basic-chip>HTML</mat-basic-chip>
+          </mat-chip-list>
+
+          <mat-chip-list #chipList>
+              <mat-chip *ngFor="let tag of tags" >
+                {{ tag }}
+                <mat-icon (click)="removeTag(tag)">cancel</mat-icon>
+              </mat-chip>
+          </mat-chip-list>
         </mat-form-field>
+        <div>
+            <button mat-button (click)="titleTooltip.show()">打開提示</button>
+            <button mat-button (click)="titleTooltip.hide()">關閉提示</button>
+            <mat-form-field>
+              <input matInput placeholder="標題" [(ngModel)]="title" 
+                     #titleTooltip="matTooltip" 
+                     matTooltip="替你的文章下一個漂亮的標題吧！" 
+                     matTooltipPosition="right"
+                     matTooltipShowDelay="500" 
+                      matTooltipHideDelay="500"/>
+            </mat-form-field>
+          </div>
+        <mat-form-field>
+            <input matInput placeholder="標題" [(ngModel)]="title" matTooltip="替你的文章下一個漂亮的標題吧！" />
+          </mat-form-field>
         <mat-form-field>
           <textarea matInput placeholder="文章內容" rows="3"></textarea>
         </mat-form-field>
