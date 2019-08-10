@@ -34,7 +34,7 @@ import {
   MatTooltipModule,
   MatSnackBarModule,
   MatExpansionModule,
-  MatExpansionModule
+  MatTabsModule
 } from '@angular/material';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -88,7 +88,7 @@ export const MY_FORMATS = {
     MatTooltipModule,
     MatSnackBarModule,
     MatExpansionModule,
-    MatExpansionModule
+    MatTabsModule
   ],
   exports: [
     MatButtonModule,
@@ -120,7 +120,7 @@ export const MY_FORMATS = {
     MatTooltipModule,
     MatSnackBarModule,
     MatExpansionModule,
-    MatExpansionModule
+    MatTabsModule
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },

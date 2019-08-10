@@ -62,6 +62,24 @@
         </mat-accordion>
         </section>
         <section class="main">
-          Main
+                <button mat-button (click)="tabIndex = tabIndex - 1">上一頁</button>
+                <button mat-button (click)="tabIndex = tabIndex + 1">下一頁</button>
+                <p>目前的selectedIndex: {{ tabIndex }}</p>
+                <mat-tab-group mat-stretch-tabs 
+                    backgroundColor="primary" color="accent" 
+                    [(selectedIndex)]="tabIndex" 
+                    (focusChange)="tabFocusChange($event)"
+                    (selectedIndexChange)="tabSelectedIndexChange($event)"
+                    (selectedTabChange)="tabSelectedTabChange($event)">
+                  <mat-tab label="郵件列表">
+                    郵件列表清單
+                  </mat-tab>
+                  <mat-tab label="系統設定">
+                    系統設定表單
+                  </mat-tab>
+                  <mat-tab label="其他">
+                    其他畫面
+                  </mat-tab>
+                </mat-tab-group>
         </section>
       </div>
